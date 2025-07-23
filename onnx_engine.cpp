@@ -66,8 +66,8 @@ void OnnxSession::forward(std::vector<std::shared_ptr<Request>> &reqs) {
 OnnxSession::OnnxSession(const std::string &model_path) {
 
   _env = Ort::Env(ORT_LOGGING_LEVEL_WARNING, "test");
-  _session_options.SetIntraOpNumThreads(3);
-  _session_options.SetInterOpNumThreads(3);
+  _session_options.SetIntraOpNumThreads(8);
+  _session_options.SetInterOpNumThreads(1);
   _session = std::make_unique<Ort::Session>(_env, model_path.c_str(),
                                             _session_options);
 }
