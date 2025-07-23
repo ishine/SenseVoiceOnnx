@@ -67,9 +67,10 @@ CLogger::CLogger(PLogLevel level, const char *file, int line) {
   std::tm bt = *std::localtime(&timer);
   */
 
-  log_stream_ << color.c_str() << "[" << level_str_ << " " << file_ << ":"
-              << line_ << " " << std::this_thread::get_id() << " "
-              << getCurrentTime() << "]\t" ;
+  log_stream_ << color.c_str() << level_str_ << " " 
+              << getCurrentTime() << " "  
+              << std::this_thread::get_id() << " "
+              << file_ << ":" << line_ << "\t" ;
 }
 
 CLogger::~CLogger() {}

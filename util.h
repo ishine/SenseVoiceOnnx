@@ -1,30 +1,111 @@
 #pragma once
+#include <cstring>
 #include <iostream>
 #include <string>
 #include <vector>
 
-#include <chrono>
-#include <iomanip>
-#include <iostream>
 #include "clog.h"
+#include <chrono>
+#include <iostream>
 
-inline std::string getCurrentTime() {
-  // 获取当前时间点
-  auto now = std::chrono::system_clock::now();
-  // 转换为time_t，以便使用put_time
-  auto now_c = std::chrono::system_clock::to_time_t(now);
-  // 转换为time_point，以便获取毫秒部分
-  auto duration = now.time_since_epoch();
-  auto millis =
-      std::chrono::duration_cast<std::chrono::milliseconds>(duration).count();
+struct WaveHeader {
+  bool Validate() const {
+    //                 F F I R
+    if (chunk_id != 0x46464952) {
+      printf("Expected chunk_id RIFF. Given: 0x%08x\n", chunk_id);
+      return false;
+    }
+    //               E V A W
+    if (format != 0x45564157) {
+      printf("Expected format WAVE. Given: 0x%08x\n", format);
+      return false;
+    }
 
-  // 使用stringstream来构建完整的日期时间字符串
-  std::stringstream ss;
-  ss << std::put_time(std::localtime(&now_c), "%Y-%m-%d %H:%M:%S");
-  ss << "." << std::setw(3) << std::setfill('0') << (millis % 1000); // 毫秒部分
+    if (subchunk1_id != 0x20746d66) {
+      printf("Expected subchunk1_id 0x20746d66. Given: 0x%08x\n", subchunk1_id);
+      return false;
+    }
 
-  return ss.str();
+    if (subchunk1_size != 16) { // 16 for PCM
+      printf("Expected subchunk1_size 16. Given: %d\n", subchunk1_size);
+      return false;
+    }
+
+    if (audio_format != 1) { // 1 for PCM
+      printf("Expected audio_format 1. Given: %d\n", audio_format);
+      return false;
+    }
+
+    if (num_channels != 1) { // we support only single channel for now
+      printf("Expected single channel. Given: %d\n", num_channels);
+      return false;
+    }
+    if (byte_rate != (sample_rate * num_channels * bits_per_sample / 8)) {
+      return false;
+    }
+
+    if (block_align != (num_channels * bits_per_sample / 8)) {
+      return false;
+    }
+
+    if (bits_per_sample != 16) { // we support only 16 bits per sample
+      printf("Expected bits_per_sample 16. Given: %d\n", bits_per_sample);
+      return false;
+    }
+    return true;
+  }
+
+  // See https://en.wikipedia.org/wiki/WAV#Metadata and
+  // https://www.robotplanet.dk/audio/wav_meta_data/riff_mci.pdf
+  void SeekToDataChunk(std::istream &is) {
+    //                              a t a d
+    while (is && subchunk2_id != 0x61746164) {
+      // const char *p = reinterpret_cast<const char *>(&subchunk2_id);
+      // printf("Skip chunk (%x): %c%c%c%c of size: %d\n", subchunk2_id, p[0],
+      //        p[1], p[2], p[3], subchunk2_size);
+      is.seekg(subchunk2_size, std::istream::cur);
+      is.read(reinterpret_cast<char *>(&subchunk2_id), sizeof(int32_t));
+      is.read(reinterpret_cast<char *>(&subchunk2_size), sizeof(int32_t));
+    }
+  }
+
+  int32_t chunk_id;
+  int32_t chunk_size;
+  int32_t format;
+  int32_t subchunk1_id;
+  int32_t subchunk1_size;
+  int16_t audio_format;
+  int16_t num_channels;
+  int32_t sample_rate;
+  int32_t byte_rate;
+  int16_t block_align;
+  int16_t bits_per_sample;
+  int32_t subchunk2_id;   // a tag of this chunk
+  int32_t subchunk2_size; // size of subchunk2
+};
+
+std::vector<std::string> splitString(const std::string &s, char delimiter);
+bool load_wav_file(const char *filename, int32_t *sampling_rate,
+                   std::vector<float> &data);
+
+template <typename T>
+std::vector<T> unique_consecutive(const std::vector<T> &input) {
+  if (input.empty())
+    return {};
+
+  std::vector<T> result;
+  result.push_back(input[0]);
+
+  for (size_t i = 1; i < input.size(); ++i) {
+    if (input[i] != input[i - 1]) {
+      result.push_back(input[i]);
+    }
+  }
+
+  return result;
 }
+
+std::string getCurrentTime();
 
 class Timer {
 public:
@@ -35,11 +116,10 @@ public:
     auto end = std::chrono::high_resolution_clock::now();
     auto duration =
         std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
-    PLOGD << "cost: " << name << " " << duration.count() << " 毫秒";
+    PLOGI << "cost: " << name << " " << duration.count() << " ms";
   }
 
 private:
   std::string name;
   std::chrono::time_point<std::chrono::high_resolution_clock> start;
 };
-

@@ -1,0 +1,65 @@
+启动并发执行...
+并发数: 5
+总任务数: 20
+已启动任务: 1/20 (PID: 35868)已启动任务: 2/20 (PID: 35869)已启动任务: 3/20 (PID: 35870)已启动任务: 4/20 (PID: 35871)已启动任务: 5/20 (PID: 35873)2025-07-22 22:48:01,591 INFO [offline-websocket-client-decode-files-sequential.py:146] {'server_addr': 'localhost', 'server_port': 6001, 'sound_files': ['test.wav']}
+2025-07-22 22:48:01,592 INFO [offline-websocket-client-decode-files-sequential.py:146] {'server_addr': 'localhost', 'server_port': 6001, 'sound_files': ['test.wav']}
+2025-07-22 22:48:01,594 INFO [offline-websocket-client-decode-files-sequential.py:146] {'server_addr': 'localhost', 'server_port': 6001, 'sound_files': ['test.wav']}
+2025-07-22 22:48:01,595 INFO [offline-websocket-client-decode-files-sequential.py:146] {'server_addr': 'localhost', 'server_port': 6001, 'sound_files': ['test.wav']}
+2025-07-22 22:48:01,607 INFO [offline-websocket-client-decode-files-sequential.py:117] 1ea3cdca-9763-4a47-a366-d4bbb7302f94 Sending test.wav
+2025-07-22 22:48:01,612 INFO [offline-websocket-client-decode-files-sequential.py:117] a7007ddb-0519-4dc7-add8-fd5f5eca93b7 Sending test.wav
+2025-07-22 22:48:01,616 INFO [offline-websocket-client-decode-files-sequential.py:146] {'server_addr': 'localhost', 'server_port': 6001, 'sound_files': ['test.wav']}
+2025-07-22 22:48:01,618 INFO [offline-websocket-client-decode-files-sequential.py:117] b843dd08-71e5-4e2d-b981-40b7fad33c38 Sending test.wav
+2025-07-22 22:48:01,621 INFO [offline-websocket-client-decode-files-sequential.py:117] 038f67a4-56e9-404c-b3d2-e8427750f5fc Sending test.wav
+2025-07-22 22:48:01,630 INFO [offline-websocket-client-decode-files-sequential.py:117] 4f40f752-b433-4f7e-ae29-19631cd78a16 Sending test.wav
+2025-07-22 22:48:01,821 INFO [offline-websocket-client-decode-files-sequential.py:138] Results: 1ea3cdca-9763-4a47-a366-d4bbb7302f94 关注自我成长，享受生活。 0.212s
+已启动任务: 6/20 (PID: 35974)2025-07-22 22:48:01,977 INFO [offline-websocket-client-decode-files-sequential.py:138] Results: a7007ddb-0519-4dc7-add8-fd5f5eca93b7 关注自我成长，享受生活。 0.363s
+2025-07-22 22:48:02,059 INFO [offline-websocket-client-decode-files-sequential.py:146] {'server_addr': 'localhost', 'server_port': 6001, 'sound_files': ['test.wav']}
+已启动任务: 7/20 (PID: 35994)2025-07-22 22:48:02,078 INFO [offline-websocket-client-decode-files-sequential.py:117] e2443797-d9eb-4d33-9f7f-b7b9fc0153ae Sending test.wav
+2025-07-22 22:48:02,161 INFO [offline-websocket-client-decode-files-sequential.py:138] Results: b843dd08-71e5-4e2d-b981-40b7fad33c38 关注自我成长，享受生活。 0.541s
+已启动任务: 8/20 (PID: 36016)2025-07-22 22:48:02,268 INFO [offline-websocket-client-decode-files-sequential.py:146] {'server_addr': 'localhost', 'server_port': 6001, 'sound_files': ['test.wav']}
+2025-07-22 22:48:02,288 INFO [offline-websocket-client-decode-files-sequential.py:117] 99c431bb-107c-42cc-8b06-9ca0c9a5cf6b Sending test.wav
+2025-07-22 22:48:02,346 INFO [offline-websocket-client-decode-files-sequential.py:138] Results: 4f40f752-b433-4f7e-ae29-19631cd78a16 关注自我成长，享受生活。 0.715s
+已启动任务: 9/20 (PID: 36038)2025-07-22 22:48:02,441 INFO [offline-websocket-client-decode-files-sequential.py:146] {'server_addr': 'localhost', 'server_port': 6001, 'sound_files': ['test.wav']}
+2025-07-22 22:48:02,459 INFO [offline-websocket-client-decode-files-sequential.py:117] 9b05f4d8-ec7a-4948-bf74-f51d9c986f19 Sending test.wav
+2025-07-22 22:48:02,577 INFO [offline-websocket-client-decode-files-sequential.py:138] Results: e2443797-d9eb-4d33-9f7f-b7b9fc0153ae 关注自我成长，享受生活。 0.498s
+2025-07-22 22:48:02,612 INFO [offline-websocket-client-decode-files-sequential.py:146] {'server_addr': 'localhost', 'server_port': 6001, 'sound_files': ['test.wav']}
+已启动任务: 10/20 (PID: 36060)2025-07-22 22:48:02,631 INFO [offline-websocket-client-decode-files-sequential.py:117] 14a632e5-4055-42a4-aeae-3f94ff85304e Sending test.wav
+2025-07-22 22:48:02,772 INFO [offline-websocket-client-decode-files-sequential.py:146] {'server_addr': 'localhost', 'server_port': 6001, 'sound_files': ['test.wav']}
+2025-07-22 22:48:02,786 INFO [offline-websocket-client-decode-files-sequential.py:117] 83273908-0fda-4541-a2ec-d27687f7ad4d Sending test.wav
+2025-07-22 22:48:03,102 INFO [offline-websocket-client-decode-files-sequential.py:138] Results: 9b05f4d8-ec7a-4948-bf74-f51d9c986f19 关注自我成长，享受生活。 0.642s
+2025-07-22 22:48:03,102 INFO [offline-websocket-client-decode-files-sequential.py:138] Results: 99c431bb-107c-42cc-8b06-9ca0c9a5cf6b 关注自我成长，享受生活。 0.812s
+2025-07-22 22:48:03,102 INFO [offline-websocket-client-decode-files-sequential.py:138] Results: 038f67a4-56e9-404c-b3d2-e8427750f5fc 关注自我成长，享受生活。 1.479s
+已启动任务: 11/20 (PID: 36086)已启动任务: 12/20 (PID: 36088)已启动任务: 13/20 (PID: 36090)2025-07-22 22:48:03,291 INFO [offline-websocket-client-decode-files-sequential.py:146] {'server_addr': 'localhost', 'server_port': 6001, 'sound_files': ['test.wav']}
+2025-07-22 22:48:03,311 INFO [offline-websocket-client-decode-files-sequential.py:117] f8b773b1-0306-4453-8166-c5865778a836 Sending test.wav
+2025-07-22 22:48:03,352 INFO [offline-websocket-client-decode-files-sequential.py:146] {'server_addr': 'localhost', 'server_port': 6001, 'sound_files': ['test.wav']}
+2025-07-22 22:48:03,362 INFO [offline-websocket-client-decode-files-sequential.py:146] {'server_addr': 'localhost', 'server_port': 6001, 'sound_files': ['test.wav']}
+2025-07-22 22:48:03,368 INFO [offline-websocket-client-decode-files-sequential.py:117] 7f351cab-136e-4c9a-bb65-2da48f7601db Sending test.wav
+2025-07-22 22:48:03,375 INFO [offline-websocket-client-decode-files-sequential.py:117] 879a31ae-7170-4c52-a6b0-142381972252 Sending test.wav
+2025-07-22 22:48:03,388 INFO [offline-websocket-client-decode-files-sequential.py:138] Results: 14a632e5-4055-42a4-aeae-3f94ff85304e 关注自我成长，享受生活。 0.755s
+已启动任务: 14/20 (PID: 36150)2025-07-22 22:48:03,631 INFO [offline-websocket-client-decode-files-sequential.py:146] {'server_addr': 'localhost', 'server_port': 6001, 'sound_files': ['test.wav']}
+2025-07-22 22:48:03,649 INFO [offline-websocket-client-decode-files-sequential.py:117] dfb1c676-c88e-4f86-b439-5071832b9133 Sending test.wav
+2025-07-22 22:48:03,724 INFO [offline-websocket-client-decode-files-sequential.py:138] Results: f8b773b1-0306-4453-8166-c5865778a836 关注自我成长，享受生活。 0.411s
+2025-07-22 22:48:03,739 INFO [offline-websocket-client-decode-files-sequential.py:138] Results: 83273908-0fda-4541-a2ec-d27687f7ad4d 关注自我成长，享受生活。 0.952s
+已启动任务: 15/20 (PID: 36173)已启动任务: 16/20 (PID: 36175)2025-07-22 22:48:03,922 INFO [offline-websocket-client-decode-files-sequential.py:138] Results: 7f351cab-136e-4c9a-bb65-2da48f7601db 关注自我成长，享受生活。 0.553s
+2025-07-22 22:48:03,954 INFO [offline-websocket-client-decode-files-sequential.py:146] {'server_addr': 'localhost', 'server_port': 6001, 'sound_files': ['test.wav']}
+2025-07-22 22:48:03,954 INFO [offline-websocket-client-decode-files-sequential.py:146] {'server_addr': 'localhost', 'server_port': 6001, 'sound_files': ['test.wav']}
+2025-07-22 22:48:03,968 INFO [offline-websocket-client-decode-files-sequential.py:117] 99179480-bcd9-4415-8954-72948aa99fd7 Sending test.wav
+2025-07-22 22:48:03,973 INFO [offline-websocket-client-decode-files-sequential.py:117] 5fa5d900-e5b5-4b8f-8ee3-000e94e04d0c Sending test.wav
+已启动任务: 17/20 (PID: 36216)2025-07-22 22:48:04,192 INFO [offline-websocket-client-decode-files-sequential.py:146] {'server_addr': 'localhost', 'server_port': 6001, 'sound_files': ['test.wav']}
+2025-07-22 22:48:04,210 INFO [offline-websocket-client-decode-files-sequential.py:117] 2bd6536b-802f-47e1-a2e4-9017427b4365 Sending test.wav
+2025-07-22 22:48:04,296 INFO [offline-websocket-client-decode-files-sequential.py:138] Results: 879a31ae-7170-4c52-a6b0-142381972252 关注自我成长，享受生活。 0.920s
+2025-07-22 22:48:04,308 INFO [offline-websocket-client-decode-files-sequential.py:138] Results: dfb1c676-c88e-4f86-b439-5071832b9133 关注自我成长，享受生活。 0.657s
+已启动任务: 18/20 (PID: 36239)已启动任务: 19/20 (PID: 36241)2025-07-22 22:48:04,486 INFO [offline-websocket-client-decode-files-sequential.py:146] {'server_addr': 'localhost', 'server_port': 6001, 'sound_files': ['test.wav']}
+2025-07-22 22:48:04,502 INFO [offline-websocket-client-decode-files-sequential.py:117] ac2a30b4-d2e5-46dc-8482-b20b5e1ba1f2 Sending test.wav
+2025-07-22 22:48:04,525 INFO [offline-websocket-client-decode-files-sequential.py:146] {'server_addr': 'localhost', 'server_port': 6001, 'sound_files': ['test.wav']}
+2025-07-22 22:48:04,545 INFO [offline-websocket-client-decode-files-sequential.py:117] f884f477-a507-40a4-bbae-ed47dfeba3aa Sending test.wav
+2025-07-22 22:48:04,558 INFO [offline-websocket-client-decode-files-sequential.py:138] Results: 99179480-bcd9-4415-8954-72948aa99fd7 关注自我成长，享受生活。 0.589s
+已启动任务: 20/20 (PID: 36282)2025-07-22 22:48:04,752 INFO [offline-websocket-client-decode-files-sequential.py:138] Results: 2bd6536b-802f-47e1-a2e4-9017427b4365 关注自我成长，享受生活。 0.540s
+2025-07-22 22:48:04,776 INFO [offline-websocket-client-decode-files-sequential.py:146] {'server_addr': 'localhost', 'server_port': 6001, 'sound_files': ['test.wav']}
+2025-07-22 22:48:04,795 INFO [offline-websocket-client-decode-files-sequential.py:117] 1264ce16-c55b-4b01-8f06-a206c93f0758 Sending test.wav
+2025-07-22 22:48:05,079 INFO [offline-websocket-client-decode-files-sequential.py:138] Results: ac2a30b4-d2e5-46dc-8482-b20b5e1ba1f2 关注自我成长，享受生活。 0.577s
+2025-07-22 22:48:05,079 INFO [offline-websocket-client-decode-files-sequential.py:138] Results: 5fa5d900-e5b5-4b8f-8ee3-000e94e04d0c 关注自我成长，享受生活。 1.105s
+2025-07-22 22:48:05,233 INFO [offline-websocket-client-decode-files-sequential.py:138] Results: f884f477-a507-40a4-bbae-ed47dfeba3aa 关注自我成长，享受生活。 0.686s
+2025-07-22 22:48:05,411 INFO [offline-websocket-client-decode-files-sequential.py:138] Results: 1264ce16-c55b-4b01-8f06-a206c93f0758 关注自我成长，享受生活。 0.615s
+
+所有任务已完成
