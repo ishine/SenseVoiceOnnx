@@ -135,7 +135,7 @@ async def run(
             start = time.perf_counter()
             decoding_results = await websocket.recv()
             end = time.perf_counter()
-            logging.info(f"Results: {reqId} {decoding_results} {end-start:.3f}s")
+            logging.info(f"Results: {reqId} {wave_filename} {decoding_results} {end-start:.3f}s")
 
         # to signal that the client has sent all the data
         await websocket.send("Done")

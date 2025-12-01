@@ -10,20 +10,21 @@ cd build
 cmake ..
 make -j 8
 
-sudo apt install libasound2-dev  # 开发库（含头文件）
+sudo apt install libasound2-dev # 开发库（含头文件）
 sudo apt install alsa-utils
 
 if [ ! -f silero_vad.onnx ]; then
-    wget https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/silero_vad.onnx
+  #wget https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/silero_vad.onnx
+  cp ../silero_vad.onnx .
 fi
 
-if [ ! -d sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17 ];then
-    wget https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2
-    tar xvf sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2
-    rm sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2
+if [ ! -d sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17 ]; then
+  wget https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2
+  tar xvf sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2
+  rm sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2
 fi
 
 if [ -f './bin/infer' ]; then
-	echo "----------SUCCESS------------"
-	echo "Try cd ./build && ./bin/infer xx.wav for test!"
+  echo "----------SUCCESS------------"
+  echo "Try cd ./build && ./bin/infer xx.wav for test!"
 fi

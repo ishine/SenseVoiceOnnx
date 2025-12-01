@@ -45,7 +45,7 @@ Ort::Value make_tensor(std::vector<std::shared_ptr<Request>> &reqs,
 }
 
 void OnnxSession::forward(std::vector<std::shared_ptr<Request>> &reqs) {
-  PLOGI << "Audio Batch Size: " << reqs.size();
+  PLOGD << "Audio Batch Size: " << reqs.size();
   std::vector<Ort::Value> input_orts;
   for (int i = 0; i < _input_names.size(); ++i) {
     input_orts.push_back(make_tensor(reqs, i));
@@ -95,8 +95,8 @@ void OnnxSession::init() {
         std::vector<std::shared_ptr<Request>> reqs;
         {
           std::unique_lock<std::mutex> lock(_mutex);
-          // _cv.wait_for(lock, std::chrono::milliseconds(100),
-          //              [&] { return _reqs.size() > 0; });
+          // _cv.wait_for(lock, std::chrono::milliseconds(20),
+          //              [&] { return _reqs.size() > 2; });
           _cv.wait(lock, [&] { return _reqs.size() > 0; });
           reqs.swap(_reqs);
         }
